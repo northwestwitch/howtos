@@ -17,30 +17,40 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-5. Install the CentOS VM in the VirtualBox:
+5. To be able to access the container from outside the host machine, modify this Vagrantfile by uncommenting the following line: `config.vm.network "public_network"`. To automatically select a bridged network on your computer you could add the network on the same line. For instance to use the wireless on my laptop I use the following configuration:
+```
+config.vm.network "public_network", bridge: [
+      "en0: Wi-Fi (AirPort)",
+]
+```
+If no bridge is selected, Vagrant will ask for a bridge while booting.
+
+6. Install the CentOS VM in the VirtualBox:
 ```
 vagrant up
 ```
-6. Check the virtual machine specifics (and that it's running) by executing `virtualBox`
+7. Check the virtual machine specifics (and that it's running) by executing `virtualBox`
 
-7. Log in the CentOS with the command `vagrant ssh`. After that you'll be logged in the CentOS shell.
+8. Log in the CentOS with the command `vagrant ssh`. After that you'll be logged in the CentOS shell.
 
-8. Install podman on CentOS:
+9. Take a note on the inet ip displayed after running the command `inet a`: this will be the ip that can be accessed in the local network.
+
+10. Install podman on CentOS 8:
 ```
 sudo dnf -y module disable container-tools
 sudo dnf -y install 'dnf-command(copr)'
 sudo dnf -y copr enable rhcontainerbot/container-selinux
-sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://download.opensuse.org/repositories/devel:/kub ic:/libcontainers:/stable/CentOS_8/devel:kubic:libcontainers:stable.repo
+sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/CentOS_8/devel:kubic:libcontainers:stable.repo
 sudo dnf -y install podman
 sudo dnf -y update
 ```
 
-9. Check podman version: `podman version`
+11. Check podman version: `podman version`
 
-10. Check podman info: `podman info`
+12. Check podman info: `podman info`
 
-11. Useful commands:
+13. Useful commands:
   - `podman ps`
   - `podman images`
 
-12. Command to exit from the machine: `exit`
+14. Command to exit from the machine: `exit`
