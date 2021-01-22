@@ -4,11 +4,13 @@ This howto is based on the following [article](https://medium.com/faun/avengers-
 
 1. Install VirtualBox from [this page](https://www.virtualbox.org/wiki/Downloads)
 2. Install vagrant from [this page](https://www.vagrantup.com/docs/installation)
-3. move to a directory where your repo is located
+3. Create a directory to store the VM files and move into it
 4. Initialize Vagrant with the command:
 ```
 vagrant init centos/8
 ```
+A list of boxes available might be found here: https://app.vagrantup.com/boxes/search
+Helpful [page](https://computingforgeeks.com/step-by-step-guide-on-using-existing-virtual-machines-with-vagrant/) explaining how to associate Vagrant to an existing VirtualBox :
 
 Note that a file with the following configuration will be created:
 ```
