@@ -103,3 +103,26 @@ To stop the container use the following stop command:
    CGroup: /user.slice/user-1000.slice/user@1000.service/container-mongodb.service
 [vagrant@localhost user]$
 ```
+
+## Removing the service from systemd
+First stop service
+```
+[vagrant@localhost user]$ systemctl --user stop container-mongodb.service
+```
+Then disable it:
+```
+[vagrant@localhost user]$ systemctl --user --user disable container-mongodb.service
+Removed /home/vagrant/.config/systemd/user/multi-user.target.wants/container-mongodb.service.
+Removed /home/vagrant/.config/systemd/user/default.target.wants/container-mongodb.service.
+```
+Finally remove service config file and its symlinks:
+```
+rm ~/.config/systemd/user/container-mongodb.service
+rm ~/.config/systemd/user/multi-user.target.wants/container-mongodb.service
+rm ~/.config/systemd/user/default.target.wants/container-mongodb.service
+```
+Then:
+```
+systemctl daemon-reload
+systemctl reset-failed
+```
