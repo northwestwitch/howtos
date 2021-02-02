@@ -21,3 +21,9 @@ podman image ls
 ```
 podman image rm -f $(podman images -aq)
 ```
+
+## Remove everything:
+```
+podman system prune
+```
+This is is especially good when you run out of memory

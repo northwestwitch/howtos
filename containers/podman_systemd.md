@@ -5,7 +5,7 @@ Systemd is a system and service manager in Linux that allows to init and manage 
 When you set up a container to start as a systemd service, you can define the order in which the containerized service runs, check for dependencies (like making sure another service is running, a file is available or a resource is mounted, etc).
 
 ## Choose the image(s) for the container to manage from systemd
-In this case I'm using a lightweight MondoDB image(mvertes/alpine-mongo) pulled from Docker Hub
+In this case I'm using a lightweight MongoDB image(mvertes/alpine-mongo) pulled from Docker Hub
 ```
 podman pull mvertes/alpine-mongo
 ```
