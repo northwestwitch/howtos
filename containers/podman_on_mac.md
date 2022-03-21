@@ -37,7 +37,7 @@ vagrant up
 
 8. Log in the Linux VM with the command `vagrant ssh`. After that you'll be logged in the OS shell.
 
-9. Take a note on the inet ip displayed after running the command `inet a`: this will be the ip that can be accessed in the local network.
+9. Take a note on the inet ip displayed after running the command `ip a`: this will be the ip that can be accessed in the local network.
 
 10. Install podman on the VM:
 ```
