@@ -15,7 +15,9 @@ Helpful [page](https://computingforgeeks.com/step-by-step-guide-on-using-existin
 Note that a file with the following configuration will be created:
 ```
 Vagrant.configure("2") do |config|
+ # commented lines
  config.vm.box = "centos/8"
+ # commented lines
 end
 ```
 
