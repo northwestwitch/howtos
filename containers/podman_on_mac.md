@@ -7,7 +7,7 @@ This howto is based on the following [article](https://medium.com/faun/avengers-
 3. Create a directory to store the VM files and move into it
 4. Initialize Vagrant with the command:
 ```
-vagrant init centos/8
+vagrant init generic/fedora33
 ```
 A list of boxes available might be found here: https://app.vagrantup.com/boxes/search
 Helpful [page](https://computingforgeeks.com/step-by-step-guide-on-using-existing-virtual-machines-with-vagrant/) explaining how to associate Vagrant to an existing VirtualBox :
