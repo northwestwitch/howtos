@@ -16,7 +16,7 @@ Note that a file with the following configuration will be created:
 ```
 Vagrant.configure("2") do |config|
  # commented lines
- config.vm.box = "centos/8"
+ config.vm.box = "generic/fedora33"
  # commented lines
 end
 ```
@@ -29,17 +29,17 @@ config.vm.network "public_network", bridge: [
 ```
 If no bridge is selected, Vagrant will ask for a bridge while booting.
 
-6. Install the CentOS VM in the VirtualBox:
+6. Install Fedora VM in the VirtualBox:
 ```
 vagrant up
 ```
 7. Check the virtual machine specifics (and that it's running) by executing `virtualBox`
 
-8. Log in the CentOS with the command `vagrant ssh`. After that you'll be logged in the CentOS shell.
+8. Log in the Linux VM with the command `vagrant ssh`. After that you'll be logged in the OS shell.
 
 9. Take a note on the inet ip displayed after running the command `inet a`: this will be the ip that can be accessed in the local network.
 
-10. Install podman on CentOS 8:
+10. Install podman on the VM:
 ```
 sudo dnf -y module disable container-tools
 sudo dnf -y install 'dnf-command(copr)'
